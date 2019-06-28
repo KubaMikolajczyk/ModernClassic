@@ -53,6 +53,7 @@ aside .inner .close-aside .bar2{-webkit-transform:rotate(-45deg) translateY(-7px
 .search-field input:-ms-input-placeholder{color:white;font-size:.85rem;text-transform:uppercase}
 .search-field input::-ms-input-placeholder{color:white;font-size:.85rem;text-transform:uppercase}
 .search-field input::placeholder{color:white;font-size:.85rem;text-transform:uppercase}
+.mouse{cursor:pointer}
 .producers_section{margin-top:1.4rem}
 .swiper-wrapper .producer-slide{height:375px;position:relative}
 .swiper-wrapper .producer-slide p{position:absolute;bottom:.7rem;right:1.5rem;color:white;font-size:1.4rem;text-transform:uppercase;font-weight:600}
