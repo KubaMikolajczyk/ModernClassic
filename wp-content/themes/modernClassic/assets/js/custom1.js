@@ -104,12 +104,13 @@ function crossBurger(x) {
 
 function initMap() {
     // The location of Uluru
-    var warsaw = {lat: -25.344, lng: 131.036};
+    var warsaw = {lat: 52.237049, lng: 21.017532};
     // The map, centered at Uluru
     var map = new google.maps.Map(
         document.getElementById('map'), {
-            zoom: 12,
+            zoom: 15,
             center: warsaw,
+            disableDefaultUI: true,
             styles: [
                 {
                     "elementType": "geometry",
