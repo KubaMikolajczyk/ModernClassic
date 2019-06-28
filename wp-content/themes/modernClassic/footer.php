@@ -12,6 +12,13 @@
 
 <aside>
     <div class="inner">
+        <div class="d-flex justify-content-end">
+            <div class="close-aside">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+            </div>
+        </div>
+
         <?php $args = array(
             'container'=> true,
             'menu_class' => 'd-flex flex-column justify-content-start align-items-center flex-wrap',

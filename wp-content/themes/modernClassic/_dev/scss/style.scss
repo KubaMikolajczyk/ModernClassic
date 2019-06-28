@@ -237,7 +237,7 @@ aside .inner {
   position: fixed;
   background: black;
   width:  300px;
-  /* transform: translateX(-300px); */
+  transform: translateX(-300px);
   transition: .3s ease-in-out;
   z-index: 15;
 
@@ -258,11 +258,36 @@ aside .inner {
 
     &:hover,
     &:active{
-      background: rgba(white, .1);
-      border-radius: 100%;
+      color: $main-orange;
     }
   }
 
+  .close-aside {
+    display: none;
+    cursor: pointer;
+    padding: 1rem;
+
+    .bar1, .bar2 {
+      width: 27px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .bar1{
+      transform: rotate(45deg) translateY(7px);
+    }
+
+    .bar2{
+      transform: rotate(-45deg) translateY(-7px);
+    }
+  }
+
+}
+
+.active{
+  transform: translateX(0) !important;
 }
 
 //------------------------------------------------
@@ -277,7 +302,6 @@ aside .inner {
   top: 100px;
   left: 0;
   right: 0;
-  transition: .3s ease-in-out;
   z-index: 10;
 }
 
@@ -308,7 +332,7 @@ aside .inner {
 }
 
 .change .bar1 {
-  transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-7px, 6px);
 }
 
 .change .bar2 {opacity: 0;}

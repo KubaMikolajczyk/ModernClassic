@@ -10,6 +10,23 @@
             }, 1000, 'linear');
         });
 
+        $('.burger-container').on('click', function(e){
+            $('.inner').toggleClass('active');
+
+            if($(document).outerWidth(true) < '1750'){
+                this.parentNode.style.setProperty('display', 'none', 'important');
+                document.getElementsByClassName('close-aside')[0].style.setProperty('display', 'inline-block', 'important');
+            }
+        });
+
+        $('.close-aside').on('click', function(e){
+            $('.inner').toggleClass('active');
+            $('.burger-container').parent().css('display', 'flex', 'important');
+            $('.burger-container').toggleClass('change');
+            this.style.setProperty('display', 'none', 'important');
+
+        })
+
         $('.slider-widget').slick({
             infinite: true,
             speed: 3000,
@@ -118,9 +135,11 @@
                 nav.style.top = '0';
                 nav.style.paddingTop = '1rem';
                 nav.style.paddingBottom = '1rem';
+                nav.style.position = 'fixed';
             } else {
                 nav.style.background = 'none';
                 nav.style.top = '100px';
+                nav.style.position = 'absolute';
             }
         }
 
