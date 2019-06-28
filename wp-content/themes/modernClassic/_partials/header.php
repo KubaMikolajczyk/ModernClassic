@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar align-items-center justify-content-between p-0">
+                <nav id="nav" class="navbar align-items-center justify-content-between p-0">
 
                     <div class="navigation row justify-content-between align-items-center w-100">
 

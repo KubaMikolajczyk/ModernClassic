@@ -2,17 +2,26 @@
 
 (function ($) {
     $(document).ready(function () {
+
+        $('#go-top').on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $('body').offset().top - 200
+            }, 1000, 'linear');
+        });
+
         $('.slider-widget').slick({
             infinite: true,
-            speed: 500,
+            speed: 3000,
             slidesToShow: 1,
-            cssEase: 'linear',
+            cssEase: 'ease-in-out',
             adaptiveHeight: true,
-            // autoplay: true,
-            // autoplaySpeed: 1000,
+            autoplay: true,
+            autoplaySpeed: 5000,
             arrows: false,
             dots: true
         });
+
         $('.news-photo-slider').slick({
             infinite: true,
             speed: 1000,
@@ -24,6 +33,7 @@
             arrows: false,
             dots: true
         });
+
         $('.slider-news').slick({
             infinite: true,
             speed: 500,
@@ -35,6 +45,7 @@
             arrows: false,
             dots: true
         });
+
         $('.partners-slider').slick({
             prevArrow: $('.prev'),
             nextArrow: $('.next'),
@@ -47,6 +58,7 @@
             autoplaySpeed: 3000,
             arrows: true
         });
+
         var producerCatSwiper = new Swiper('#producers .swiper-container', {
             slidesPerView: 2.6,
             spaceBetween: 30,
@@ -71,6 +83,7 @@
                 }
             }
         });
+
         var implementationsCatSwiper = new Swiper('#implementations .swiper-container', {
             slidesPerView: 2.6,
             spaceBetween: 30,
@@ -95,6 +108,22 @@
                 }
             }
         });
+
+        var nav = document.getElementById('masthead');
+
+        window.onscroll = function() {
+
+            if(window.pageYOffset > 100){
+                nav.style.background = 'rgba(0,0,0,.5)';
+                nav.style.top = '0';
+                nav.style.paddingTop = '1rem';
+                nav.style.paddingBottom = '1rem';
+            } else {
+                nav.style.background = 'none';
+                nav.style.top = '100px';
+            }
+        }
+
     });
 })(jQuery);
 

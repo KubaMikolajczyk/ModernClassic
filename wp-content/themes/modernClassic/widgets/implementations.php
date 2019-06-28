@@ -14,8 +14,10 @@ $imps = get_posts( array(
         <div class="swiper-wrapper">
             <?php foreach($imps as $imp) :?>
                 <div class="swiper-slide">
-                    <div class="implementation-slide" style="background: url(<?php echo get_field('karta_implementacji', $imp->ID)['zdjecie']?>) no-repeat; background-size: cover">
+                    <div class="implementation-slide overflow-hidden position-relative">
+                        <div class="h-100" style="background: url(<?php echo get_field('karta_implementacji', $imp->ID)['zdjecie']?>) no-repeat; background-size: cover"></div>
                         <p><?php echo get_field('karta_implementacji', $imp->ID)['tekst_do_zdjecia']?></p>
+                        <a class="link-overlay" href="<?php echo get_permalink($imp->ID)?>" title="<?php echo get_field('producent_slajd', $man->ID)['tekst_na_zdjeciu']?>"></a>
                     </div>
                 </div>
             <?php endforeach; ?>
