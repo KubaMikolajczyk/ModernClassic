@@ -41,7 +41,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="see-more-producers">
+    <div class="see-more">
         <a title="zobacz więcej" href="#">
             <span>zobacz więcej</span>
         </a>

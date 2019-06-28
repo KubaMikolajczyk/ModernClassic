@@ -109,6 +109,15 @@ button{
 //-------------      REUSABLES       -------------
 //------------------------------------------------
 
+//overlay effect
+
+.link-overlay{
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
 
 
 .slider-widget{
@@ -257,6 +266,11 @@ button{
     font-size: 1.5rem;
     padding-bottom: 0;
     height: 27px;
+    transition: .3s ease-in-out;
+
+    &:hover{
+      color: $main-orange;
+    }
   }
 
 
@@ -357,11 +371,9 @@ button{
   }
 }
 
-.see-more-container{
-  position: absolute;
-}
+// SEE MORE BUTTONS
 
-.see-more-producers{
+.see-more{
   position: relative;
 
   a{
@@ -375,6 +387,8 @@ button{
     color: white;
     text-align: right;
     position: relative;
+    z-index: 5;
+    transition: .3s ease-in-out;
 
 
     &:after{
@@ -386,6 +400,20 @@ button{
       position: absolute;
       right: -1.2rem;
       bottom: .3rem;
+      transition: .3s ease-in-out;
+    }
+
+    &:hover,
+    &:active{
+      color: $main-orange;
+
+
+      &:after{
+        right: -1.4rem;
+        bottom: .4rem;
+        width: .4rem;
+        height: .4rem;
+      }
     }
   }
 }

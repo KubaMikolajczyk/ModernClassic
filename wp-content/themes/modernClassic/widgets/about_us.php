@@ -36,7 +36,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="see-more-producers">
+    <div class="see-more">
         <a title="czytaj więcej" href="#">
             <span>czytaj więcej</span>
         </a>

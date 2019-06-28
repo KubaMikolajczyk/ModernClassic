@@ -15,6 +15,7 @@
 body,html{margin:0;padding:0;font-family:"Montserrat",sans-serif;background-color:#000}
 input,button{outline:none !important}
 .slick-slide{outline:0}
+.link-overlay{top:0;bottom:0;left:0;right:0;position:absolute}
 .slider-widget .slider-photo{min-height:800px;position:relative}
 .slider-widget .slick-dots{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-transform:translateY(-200px);transform:translateY(-200px);margin:0;padding:1.5rem 0;list-style:none}
 .slider-widget .slick-dots li{margin:0 .25rem}
@@ -31,7 +32,8 @@ input,button{outline:none !important}
 .change .bar1{-webkit-transform:rotate(-45deg) translate(-9px,6px);transform:rotate(-45deg) translate(-9px,6px)}
 .change .bar2{opacity:0}
 .change .bar3{-webkit-transform:rotate(45deg) translate(-8px,-8px);transform:rotate(45deg) translate(-8px,-8px)}
-.search-field button{background:0;color:white;border:0;font-size:1.5rem;padding-bottom:0;height:27px}
+.search-field button{background:0;color:white;border:0;font-size:1.5rem;padding-bottom:0;height:27px;-webkit-transition:.3s ease-in-out;transition:.3s ease-in-out}
+.search-field button:hover{color:#d29838}
 .search-field input{background:0;color:white;border:0;width:60px;-webkit-transition:.3s ease;transition:.3s ease}
 .search-field input:focus{width:200px}
 .search-field input::-webkit-input-placeholder{color:white;font-size:.85rem;text-transform:uppercase}
@@ -49,11 +51,12 @@ input,button{outline:none !important}
 .swiper-pagination .swiper-pagination-bullet{color:white;height:20px;opacity:.5}
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 10px}
 .swiper-pagination .swiper-pagination-bullet:not(:last-of-type):after{content:"";width:5px;height:2px;background:#9c9c9c;position:absolute;left:16px;bottom:8px}
-.see-more-container{position:absolute}
-.see-more-producers{position:relative}
-.see-more-producers a{text-decoration:none;position:absolute;right:0;bottom:0}
-.see-more-producers a span{color:white;text-align:right;position:relative}
-.see-more-producers a span:after{content:"";width:.6rem;height:.6rem;background:white;border-radius:100%;position:absolute;right:-1.2rem;bottom:.3rem}
+.see-more{position:relative}
+.see-more a{text-decoration:none;position:absolute;right:0;bottom:0}
+.see-more a span{color:white;text-align:right;position:relative;z-index:5;-webkit-transition:.3s ease-in-out;transition:.3s ease-in-out}
+.see-more a span:after{content:"";width:.6rem;height:.6rem;background:white;border-radius:100%;position:absolute;right:-1.2rem;bottom:.3rem;-webkit-transition:.3s ease-in-out;transition:.3s ease-in-out}
+.see-more a span:hover,.see-more a span:active{color:#d29838}
+.see-more a span:hover:after,.see-more a span:active:after{right:-1.4rem;bottom:.4rem;width:.4rem;height:.4rem}
 .about-section{margin-top:6rem}
 .about-section h3{color:white;text-transform:uppercase;font-size:1rem;margin-bottom:5rem}
 .icon-container{position:relative;z-index:3}
