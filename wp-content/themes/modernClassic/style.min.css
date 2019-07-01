@@ -178,6 +178,8 @@ footer{margin-bottom:9rem}
 .up-button-container .arrow-up a{display:block;text-decoration:none}
 .up-button-container .arrow-up a i{display:block;color:rgba(255,255,255,0.6);-webkit-transform:rotate(90deg);transform:rotate(90deg)}
 .up-button-container .arrow-up a i:before{padding:.5rem;border:1px solid rgba(255,255,255,0.6);border-radius:100%}
+#product-179{margin-top:20rem}
+#product-179 .slick-dots{list-style:none}
 @-webkit-keyframes mouse{from{opacity:1;top:5px}
 to{opacity:0;top:20px}
 }@keyframes mouse{from{opacity:1;top:5px}

@@ -81,6 +81,15 @@
             arrows: true
         });
 
+        $('.product-image-slider-wrapper').slick({
+            infinite: true,
+            speed: 1000,
+            slidesToShow: 1,
+            cssEase: 'ease-in-out',
+            arrows: false,
+            dots: true
+        });
+
         var producerCatSwiper = new Swiper('#producers .swiper-container', {
             slidesPerView: 2.6,
             spaceBetween: 30,
