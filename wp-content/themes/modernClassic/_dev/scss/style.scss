@@ -1237,5 +1237,65 @@ footer{
 
   .slick-dots{
     list-style: none;
+    padding: 0;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  .slick-dots li {margin: 0 0.25rem;}
+
+  .slick-dots button {
+    display: block;
+    width: .7rem;
+    height: .7rem;
+    padding: 0;
+
+    border: 1px solid white;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0);
+
+    text-indent: -9999px;
+  }
+
+  .slick-dots li.slick-active button {
+    background-color: white;
+  }
+
+  .entry-summary{
+    margin-top: 1.5rem;
+  }
+
+  .entry-summary h1{
+    color: white;
+  }
+
+  .product_meta .posted_in {
+    color: rgba(white,.8);
+  }
+
+  .product_meta .posted_in a {
+    color: $main-orange;
+    text-decoration: none;
+  }
+
+  .summary-box{
+    position: relative;
+    z-index: 3;
+
+    &:after{
+      content: "";
+      width: 340px;
+      height: 176px;
+      background: #171717;
+      position: absolute;
+      top: -0.8rem;
+      right: 11.2rem;
+      z-index: -1;
+    }
   }
 }
+
+
