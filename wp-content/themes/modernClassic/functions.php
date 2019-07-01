@@ -134,3 +134,13 @@ function site_menu()
 }
 
 add_action('init', 'site_menu');
+
+function producers_products_tax_init() {
+    $tax_args = array(
+        'hierarchical' => true,
+        'label' => 'Producenci',
+        'rewrite' => array('slug' => 'produkty_producenci', 'with_front' => false)
+    );
+    register_taxonomy('produkty_producenci', 'product', $tax_args);
+}
+add_action( 'init', 'producers_products_tax_init' );
