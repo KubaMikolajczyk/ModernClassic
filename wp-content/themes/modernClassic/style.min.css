@@ -175,7 +175,7 @@ div.wpcf7-validation-errors,div.wpcf7-acceptance-missing{border:2px solid red}
 #submit-form span{width:8px}
 .map-section{margin-top:5rem}
 #map{height:390px}
-footer{margin-bottom:9rem}
+footer{margin-bottom:3rem}
 .f-top{position:relative}
 .f-top:after{content:"";width:1px;height:160px;background:rgba(255,255,255,0.2);position:absolute;right:0;top:40px}
 .f-bottom ul{list-style:none;margin:0;padding:0;width:85%;margin-left:1rem;margin-top:2rem}
@@ -196,8 +196,8 @@ footer{margin-bottom:9rem}
 .up-button-container .arrow-up a{display:block;text-decoration:none}
 .up-button-container .arrow-up a i{display:block;color:rgba(255,255,255,0.6);-webkit-transform:rotate(90deg);transform:rotate(90deg)}
 .up-button-container .arrow-up a i:before{padding:.5rem;border:1px solid rgba(255,255,255,0.8);border-radius:100%}
-.copyrights p{margin-right:2rem;margin-top:2rem;color:rgba(255,255,255,0.3);font-size:.95rem}
-#product-179{margin-top:20rem}
+.copyrights p{margin-right:2rem;margin-top:3rem;color:rgba(255,255,255,0.3);font-size:.95rem;margin-bottom:3rem}
+#product-179{padding-top:20rem}
 #product-179 .slick-dots{list-style:none;padding:0;margin:1rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 #product-179 .slick-dots li{margin:0 .25rem}
 #product-179 .slick-dots button{display:block;width:.7rem;height:.7rem;padding:0;border:1px solid white;border-radius:100%;background-color:rgba(0,0,0,0);text-indent:-9999px}
@@ -209,9 +209,9 @@ footer{margin-bottom:9rem}
 #product-179 .summary-box{position:relative;z-index:3}
 #product-179 .summary-box:after{content:"";width:340px;height:176px;background:#171717;position:absolute;top:-0.8rem;right:11.2rem;z-index:-1}
 #product-179 .product-desc-container{margin-top:3rem;background:#171717;padding:2rem;position:relative}
-#product-179 .product-desc-container h3{font-size:1rem;color:white;text-transform:uppercase}
-#product-179 .product-desc-container p{color:rgba(255,255,255,0.9)}
-#product-179 .product-desc-container i{color:rgba(255,255,255,0.7);font-size:4rem;position:absolute;right:0;top:0}
+#product-179 .product-desc-container h3{font-size:1.2rem;color:white;text-transform:uppercase;margin-bottom:2rem}
+#product-179 .product-desc-container p{color:rgba(255,255,255,0.9);width:90%}
+#product-179 .product-desc-container i{color:rgba(255,255,255,0.7);font-size:4rem;position:absolute;right:2rem;top:-2rem}
 @-webkit-keyframes mouse{from{opacity:1;top:5px}
 to{opacity:0;top:20px}
 }@keyframes mouse{from{opacity:1;top:5px}

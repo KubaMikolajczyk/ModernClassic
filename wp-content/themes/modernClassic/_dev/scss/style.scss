@@ -1211,7 +1211,7 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
 //------------------------------------------------
 
 footer{
-  margin-bottom: 9rem;
+  margin-bottom: 3rem;
 }
 
 .f-top{
@@ -1340,9 +1340,10 @@ footer{
 
 .copyrights p {
   margin-right: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   color: rgba(white, .3);
   font-size: .95rem;
+  margin-bottom: 3rem;
 }
 
 //------------------------------------------------
@@ -1350,7 +1351,7 @@ footer{
 //------------------------------------------------
 
 #product-179{
-  margin-top: 20rem;
+  padding-top: 20rem;
 
   .slick-dots{
     list-style: none;
@@ -1422,21 +1423,23 @@ footer{
   }
 
   .product-desc-container h3{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white;
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
 
   .product-desc-container p{
     color: rgba(white, .9);
+    width: 90%;
   }
 
   .product-desc-container i {
     color: rgba(white, .7);
     font-size: 4rem;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 2rem;
+    top: -2rem;
   }
 }
 
