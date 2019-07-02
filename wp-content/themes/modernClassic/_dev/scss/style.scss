@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 
 @font-face {
@@ -71,6 +72,30 @@
 .icon-swatches:before {
   content: "\6b";
 }
+.icon-baseline-extension-24px:before {
+  content: "\6c";
+}
+.icon-baseline-grade-24px:before {
+  content: "\6d";
+}
+.icon-baseline-layers-24px:before {
+  content: "\6e";
+}
+.icon-baseline-list-alt-24px:before {
+  content: "\6f";
+}
+.icon-baseline-local-library-24px:before {
+  content: "\70";
+}
+.icon-baseline-table-chart-24px:before {
+  content: "\71";
+}
+.icon-baseline-verified-user-24px-1:before {
+  content: "\72";
+}
+.icon-baseline-widgets-24px:before {
+  content: "\73";
+}
 
 
 //------------------------------------------------
@@ -80,18 +105,23 @@
 $main-font: "Montserrat", sans-serif;
 $main-site-color: #000;
 $main-orange: #d29838;
+$margin-boxes: 3rem;
+$background-grey: #171717;
 
 
 //------------------------------------------------
 //-------------         BODY       ---------------
 //------------------------------------------------
 
+
 body,
 html {
+  position: relative;
   margin: 0;
   padding: 0;
   font-family: $main-font;
   background-color: $main-site-color;
+  min-height: 100%;
 }
 
 input,
@@ -102,6 +132,22 @@ button{
 // general slick slider setup
 .slick-slide {
   outline: none
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.overlay{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
 }
 
 
@@ -157,12 +203,12 @@ button{
     list-style: none;
   }
 
-  .slick-dots li {margin: 0 0.25rem;}
+  .slick-dots li {margin: 0 0.55rem;}
 
   .slick-dots button {
     display: block;
-    width: .7rem;
-    height: .7rem;
+    width: .6rem;
+    height: .6rem;
     padding: 0;
 
     border: 1px solid white;
@@ -235,7 +281,7 @@ aside .inner {
   bottom: 0;
   left: 0;
   position: fixed;
-  background: black;
+  background: white;
   width:  300px;
   transform: translateX(-300px);
   transition: .3s ease-in-out;
@@ -248,18 +294,39 @@ aside .inner {
   }
 
   #menu_2 li {
-    padding: 1rem 0;
-  }
-
-  #menu_2 li a {
-    color: white;
-    text-decoration: none;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
     transition: .3s ease-in-out;
+    border-top: 1px solid rgba(black,.2);
+
+    &:last-of-type{
+      border-bottom: 1px solid rgba(black,.2);
+
+    }
 
     &:hover,
     &:active{
-      color: $main-orange;
+      background: $main-orange;
+      border-top: 1px solid $main-orange;
+
+      a{
+        color: white;
+      }
     }
+  }
+
+  #menu_2 li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 1rem 1rem 1rem 2rem;
+    width: 100%;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 
   .close-aside {
@@ -268,19 +335,19 @@ aside .inner {
     padding: 1rem;
 
     .bar1, .bar2 {
-      width: 27px;
-      height: 4px;
-      background-color: white;
+      width: 25px;
+      height: 3px;
+      background-color: black;
       margin: 6px 0;
       transition: 0.4s;
     }
 
     .bar1{
-      transform: rotate(45deg) translateY(7px);
+      transform: rotate(45deg) translateY(6px);
     }
 
     .bar2{
-      transform: rotate(-45deg) translateY(-7px);
+      transform: rotate(-45deg) translateY(-6px);
     }
   }
 
@@ -298,11 +365,29 @@ aside .inner {
 
 // whole header
 .masthead{
-  position: fixed;
-  top: 100px;
+  position: absolute;
+  top: 50px;
   left: 0;
   right: 0;
   z-index: 10;
+  background: none;
+
+}
+
+#mastlogo{
+  transition: .2s ease-in-out;
+  width: 240px;
+}
+
+.sticky_navbar{
+  position: fixed;
+  padding: 1rem 0;
+  top: 0;
+  background: rgba(black, .8);
+}
+
+.small_logo{
+  width: 140px !important;
 }
 
 // burger
@@ -310,10 +395,13 @@ aside .inner {
 .menu-burger-box{
 
   h3{
-    margin-left: .6rem;
-    font-size: .85rem;
+    margin: 0 0 0 .6rem;
+    line-height: 1;
+    font-size: 1rem;
     text-transform: uppercase;
     color: white;
+    position: relative;
+    top: 1px;
   }
 }
 
@@ -323,22 +411,22 @@ aside .inner {
   cursor: pointer;
 
   .bar1, .bar2, .bar3 {
-    width: 27px;
-    height: 4px;
+    width: 25px;
+    height: 3px;
     background-color: white;
-    margin: 6px 0;
+    margin: 4px 0;
     transition: 0.4s;
   }
 }
 
 .change .bar1 {
-  transform: rotate(-45deg) translate(-7px, 6px);
+  transform: rotate(-45deg) translate(-2px, 6px);
 }
 
 .change .bar2 {opacity: 0;}
 
 .change .bar3 {
-  transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-4px, -8px);
 }
 
 //Search bar
@@ -349,7 +437,7 @@ aside .inner {
     color: white;
     border: none;
     font-size: 1.5rem;
-    padding-bottom: 0;
+    padding-bottom: 2px;
     height: 27px;
     transition: .3s ease-in-out;
 
@@ -363,7 +451,7 @@ aside .inner {
     background: none;
     color: white;
     border: none;
-    width: 60px;
+    width: 70px;
     transition: .3s ease;
 
     &:focus{
@@ -373,7 +461,7 @@ aside .inner {
 
   input::placeholder{
     color: white;
-    font-size: .85rem;
+    font-size: 1rem;
     text-transform: uppercase;
   }
 }
@@ -396,19 +484,19 @@ aside .inner {
 .swiper-wrapper{
 
   .producer-slide{
-    //width: 500px;
-    height: 375px;
     position: relative;
   }
 
   .producer-slide p {
     position: absolute;
-    bottom: .7rem;
+    bottom: 2rem;
     right: 1.5rem;
     color: white;
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 600;
+    margin: 0;
+    line-height: 1;
   }
 }
 
@@ -465,12 +553,18 @@ aside .inner {
 .see-more{
   position: relative;
 
+  .news{
+    bottom: -.3rem;
+  }
+
   a{
     text-decoration: none;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: .6rem;
   }
+
+
 
   a span {
     color: white;
@@ -617,20 +711,20 @@ aside .inner {
 .swiper-wrapper{
 
   .implementation-slide{
-    //width: 500px;
-    height: 375px;
     position: relative;
   }
 
   .implementation-slide p {
     position: absolute;
-    bottom: .7rem;
+    bottom: 2rem;
     right: 1.5rem;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
     font-weight: 600;
     text-align: right;
+    margin: 0;
+    line-height: 1;
   }
 }
 
@@ -662,6 +756,14 @@ aside .inner {
     font-size: 1rem;
     margin-bottom: 4rem;
   }
+
+  .date{
+    text-align: right;
+    position: relative;
+    transform: translateX(-15%);
+    color: #fff;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .news-photo-slider{
@@ -681,12 +783,14 @@ aside .inner {
 
   &:after{
     content: "";
-    width: 500px;
-    height: 330px;
+    width: 100%;
+    height: 100%;
+    top: -5%;
+    left: -15%;
     background: #171717;
     position: absolute;
-    top: 3.1rem;
-    right: 11.2rem;
+    //top: 3.1rem;
+    //right: 11.2rem;
     z-index: -1;
   }
 }
@@ -758,12 +862,16 @@ aside .inner {
     list-style: none;
   }
 
+  .slick-dots li:first-of-type{
+    margin-left: 0;
+  }
+
   .slick-dots li {margin: 0 0.25rem;}
 
   .slick-dots button {
     display: block;
-    width: .7rem;
-    height: .7rem;
+    width: .6rem;
+    height: .6rem;
     padding: 0;
 
     border: 1px solid white;
@@ -849,7 +957,7 @@ aside .inner {
     position: absolute;
     left:0;
     right: 0;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     z-index: 2;
 
@@ -1014,6 +1122,7 @@ aside .inner {
     text-align: center;
 
     span textarea{
+      resize: none;
       color: #A8A8A8;
       padding:1rem;
       height:150px;
@@ -1057,7 +1166,7 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
 
 
   input{
-    padding: 1.5rem;
+    padding: 1.3rem;
     width: 5%;
     font-size: 0;
     border-radius: 100%;
@@ -1069,11 +1178,11 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
   }
 
   i{
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: white;
     z-index: 2;
-    top: .7rem;
-    right: 1.5rem;
+    top: .6rem;
+    right: 1.45rem;
 
     position: absolute;
     transition: .3s ease-in-out;
@@ -1137,7 +1246,7 @@ footer{
 }
 
 .f-bottom ul li a{
-  color: rgba(white, .4);
+  color: rgba(white, .8);
   text-decoration: none;
   font-size: .9rem;
   transition: .3s ease-in-out;
@@ -1185,6 +1294,7 @@ footer{
     font-size: 1rem;
     text-transform: uppercase;
     margin-left: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   i{
@@ -1221,11 +1331,18 @@ footer{
 
       &:before {
         padding: .5rem;
-        border: 1px solid rgba(white, .6);
+        border: 1px solid rgba(white, .8);
         border-radius: 100%;
       }
     }
   }
+}
+
+.copyrights p {
+  margin-right: 2rem;
+  margin-top: 2rem;
+  color: rgba(white, .3);
+  font-size: .95rem;
 }
 
 //------------------------------------------------
@@ -1289,12 +1406,37 @@ footer{
       content: "";
       width: 340px;
       height: 176px;
-      background: #171717;
+      background: $background-grey;
       position: absolute;
       top: -0.8rem;
       right: 11.2rem;
       z-index: -1;
     }
+  }
+
+  .product-desc-container{
+    margin-top: $margin-boxes;
+    background: $background-grey;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .product-desc-container h3{
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .product-desc-container p{
+    color: rgba(white, .9);
+  }
+
+  .product-desc-container i {
+    color: rgba(white, .7);
+    font-size: 4rem;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 

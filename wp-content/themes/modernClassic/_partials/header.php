@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav id="nav" class="navbar align-items-center justify-content-between p-0">
+                <nav id="nav" class="navbar d-block p-0">
 
-                    <div class="navigation row justify-content-between align-items-center w-100">
+                    <div class="navigation row justify-content-between align-items-center w-100 mx-auto">
 
                         <div class="col-md-4">
-                            <div class="menu-burger-box d-flex justify-content-start align-items-end">
+                            <div class="menu-burger-box d-flex justify-content-start align-items-center">
                                 <div class="burger-container" onclick="crossBurger(this)">
                                     <div class="bar1"></div>
                                     <div class="bar2"></div>
@@ -20,7 +20,7 @@
                         <div class="col-md-4">
                             <div class="header-logo-box text-center">
                                 <a title="<?php bloginfo("name")?>"  href="<?php echo site_url(); ?>">
-                                    <img alt="Logo <?php bloginfo("name")?>" src="<?php echo get_field('logo','option'); ?>"/>
+                                    <img id="mastlogo" alt="Logo <?php bloginfo("name")?>" src="<?php echo get_field('logo','option'); ?>"/>
                                 </a>
                             </div>
                         </div>

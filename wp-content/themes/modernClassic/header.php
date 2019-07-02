@@ -26,6 +26,8 @@
 
 <body <?php body_class(); ?>>
 
+<div class="overlay"></div>
+
 <div id="page" class="site">
     <div class="site-inner">
         <?php get_template_part('_partials/header'); ?>

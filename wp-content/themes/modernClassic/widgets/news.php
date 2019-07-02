@@ -24,17 +24,25 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="col-6 news-content d-flex flex-column justify-content-end">
-                    <p class="date"><?php echo get_field('karta_nowosci', $bPost->ID)['data']?></p>
-                    <h2><?php echo get_field('karta_nowosci', $bPost->ID)['naglowek']?></h2>
-                    <p class="desc">
-                        <?php echo short_text(get_field('karta_nowosci', $bPost->ID)['tresc'], 303) ?>
+                <div class="col-6">
+                    <p class="date">
+                        <?php
+                        $stringDate = $bPost->post_date;
+                        $convertedDate = strtotime($stringDate);
+                        $date = date('d F Y', $convertedDate);
+                        //                        echo $date;
+                        date_local($date);
+                        ?>
                     </p>
-                    <a class="arrow-more" title="zobacz post" href="#">
-                        <i class="icon-back"></i>
-                    </a>
-
-
+                    <div class="news-content d-flex flex-column justify-content-end">
+                        <h2><?php echo get_field('karta_nowosci', $bPost->ID)['naglowek']?></h2>
+                        <p class="desc">
+                            <?php echo short_text(get_field('karta_nowosci', $bPost->ID)['tresc'], 303) ?>
+                        </p>
+                        <a class="arrow-more" title="zobacz post" href="#">
+                            <i class="icon-back"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -42,7 +50,7 @@
 </div>
 <div class="container">
     <div class="see-more">
-        <a title="zobacz więcej" href="#">
+        <a title="zobacz więcej" class="news" href="#">
             <span>zobacz więcej</span>
         </a>
     </div>

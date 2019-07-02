@@ -12,6 +12,7 @@
 
         $('.burger-container').on('click', function(){
             $('.inner').toggleClass('active');
+            $('.overlay').css('display','block');
 
             if($(document).outerWidth(true) < '1750'){
                 this.parentNode.style.setProperty('display', 'none', 'important');
@@ -24,6 +25,7 @@
             $('.burger-container').parent().css('display', 'flex', 'important');
             $('.burger-container').toggleClass('change');
             this.style.setProperty('display', 'none', 'important');
+            $('.overlay').css('display','none');
         });
 
         $('.mouse').on('click', function () {
@@ -45,6 +47,7 @@
         });
 
         $('.news-photo-slider').slick({
+            draggable: false,
             infinite: true,
             speed: 1000,
             slidesToShow: 1,
@@ -91,11 +94,15 @@
         });
 
         var producerCatSwiper = new Swiper('#producers .swiper-container', {
-            slidesPerView: 2.6,
+            slidesPerView: 5,
             spaceBetween: 30,
             centeredSlides: true,
             loop: true,
             breakpoints: {
+                1920: {
+                  slidesPerView: 2.6,
+                  spaceBetween: 30
+                },
                 768: {
                     slidesPerView: 1,
                     spaceBetween: 2
@@ -116,11 +123,15 @@
         });
 
         var implementationsCatSwiper = new Swiper('#implementations .swiper-container', {
-            slidesPerView: 2.6,
+            slidesPerView: 5,
             spaceBetween: 30,
             centeredSlides: true,
             loop: true,
             breakpoints: {
+                1920: {
+                    slidesPerView: 2.6,
+                    spaceBetween: 30
+                },
                 768: {
                     slidesPerView: 1,
                     spaceBetween: 2
@@ -141,19 +152,16 @@
         });
 
         var nav = document.getElementById('masthead');
+        var mast_logo =document.getElementById('mastlogo');
 
         window.onscroll = function() {
 
-            if(window.pageYOffset > 100){
-                nav.style.background = 'rgba(0,0,0,.5)';
-                nav.style.top = '0';
-                nav.style.paddingTop = '1rem';
-                nav.style.paddingBottom = '1rem';
-                nav.style.position = 'fixed';
+            if(window.pageYOffset > 50){
+                nav.classList.add('sticky_navbar');
+                mast_logo.classList.add('small_logo');
             } else {
-                nav.style.background = 'none';
-                nav.style.top = '100px';
-                nav.style.position = 'absolute';
+                nav.classList.remove('sticky_navbar');
+                mast_logo.classList.remove('small_logo');
             }
         }
 

@@ -18,7 +18,9 @@ $mans = get_posts( array(
 
             <div class="swiper-slide">
                 <div class="producer-slide overflow-hidden position-relative">
-                    <div class="h-100" style="background: url(<?php echo get_field('producent_slajd', $man->ID)['zdjecie']?>) no-repeat; background-size: cover" ></div>
+                    <div class="image">
+                        <img class="w-100" src="<?php echo get_field('producent_slajd', $man->ID)['zdjecie']?>" alt="<?php echo get_field('producent_slajd', $man->ID)['tekst_na_zdjeciu']?>">
+                    </div>
                     <p><?php echo get_field('producent_slajd', $man->ID)['tekst_na_zdjeciu']?></p>
                     <a class="link-overlay" href="<?php echo get_permalink($man->ID)?>" title="<?php echo get_field('producent_slajd', $man->ID)['tekst_na_zdjeciu']?>"></a>
                 </div>

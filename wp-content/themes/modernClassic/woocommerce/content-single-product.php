@@ -47,7 +47,11 @@ if ( post_password_required() ) {
                         <?php endforeach; ?>
                 </div>
                 <div class="product-desc-container">
-                    <h3><?php echo get_field('naglowek_opisu_produktu', $post->ID)?></h3>
+                    <div class="title-header">
+                        <h3><?php echo get_field('naglowek_opisu_produktu', $post->ID)?></h3>
+                        <i class="icon-baseline-table-chart-24px"></i>
+                    </div>
+
                     <p><?php echo get_field('opis_produktu', $post->ID)?></p>
                 </div>
                 <div class="product-advantages">
@@ -101,7 +105,6 @@ if ( post_password_required() ) {
                         </div>
                     </div>
 
-                    <?php pr(get_field('do_pobrania', $post->ID))?>
 
                     <div class="row product-specification">
                         <div class="title-box">
@@ -125,10 +128,23 @@ if ( post_password_required() ) {
                     <div class="row product-instruction">
                         <div class="title-box">
                             <h3><?php echo get_field('naglowek_instrukcji', $post->ID)?></h3>
+                        </div>
+                        <div class="product-instruction-button">
                             <form action="http://google.com">
                                 <input type="submit" value="<?php echo get_field('przycisk_instrukcji', $post->ID)?>" />
                             </form>
                         </div>
+                    </div>
+
+                    <div class="row product-downloads">
+                        <div class="title-box">
+                            <h3><?php echo get_field('naglowek_do_pobrania', $post->ID)?></h3>
+                        </div>
+                        <?php foreach(get_field('do_pobrania', $post->ID) as $item) : ?>
+                            <div class="file-box">
+                                <a href="<?php echo $item['plik']?>" download>Plik</a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
 
             </div>

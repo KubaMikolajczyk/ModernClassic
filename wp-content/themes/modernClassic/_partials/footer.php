@@ -1,6 +1,8 @@
 <footer>
     <div class="container">
+<!--        start of footer-->
         <div class="row">
+
             <div class="col-6">
                 <div class="footer-container">
 
@@ -55,6 +57,13 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+<!--   end of footer     -->
+<!--   start of copyrights     -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end copyrights">
+                <p><?php echo get_field('copyrights', 'option')?></p>
             </div>
         </div>
     </div>

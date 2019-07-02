@@ -144,3 +144,30 @@ function producers_products_tax_init() {
     register_taxonomy('produkty_producenci', 'product', $tax_args);
 }
 add_action( 'init', 'producers_products_tax_init' );
+
+
+function date_local( $date=null ){
+    $months = array(
+        'January' => 'Styczeń',
+        'February' => 'Luty',
+        'March' => 'Marzec',
+        'April' => 'Kwiecień',
+        'May' => 'Maj',
+        'June' => 'Czerwiec',
+        'July' => 'Lipiec',
+        'August' => 'Sierpień',
+        'September' => 'Wrzesień',
+        'October' => 'Październik',
+        'November' => 'Listopad',
+        'December' => 'Grudzień'
+    );
+
+    $output = '';
+    $i = 12;
+    foreach ($months as $k => $item){
+        $output = str_replace($k,$item,$date);
+        if ($output != $date)
+            echo $output;
+
+    }
+}
